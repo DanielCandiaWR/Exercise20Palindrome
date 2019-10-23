@@ -4,9 +4,16 @@ import java.util.Stack;
 
 public class StringApplications {
 	public static boolean isPalindrome(String cad) {
+		boolean isPal = true;
 		String cadClean = cad.replaceAll("[^A-Za-z]+","");
+		cadClean = cadClean.toLowerCase();
+		for(int i=0;i<cadClean.length();i++){
+			if(cadClean.charAt(i)!=cadClean.charAt((cadClean.length()-1)-i)){
+				isPal=false;
+			}
+		}
 		System.out.println(cadClean);
-		return false;
+		return isPal;
 	}
 	
 	public static boolean isPalindromeStack(String cad) {
